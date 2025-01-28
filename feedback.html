@@ -1,103 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color:light greenyellow;
-        }
-        .feedback-form-container {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 100%;
-            max-width: 400px;
-        }
-        .feedback-form-container h1 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            color: #555;
-        }
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        .form-group textarea {
-            resize: none;
-            height: 100px;
-        }
-        .submit-button {
-            width: 100%;
-            padding: 0.75rem;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .submit-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f7f7f7;
+    }
+    .feedback-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+    .feedback-form .logo h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .feedback-form .banner img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    form {
+      margin-top: 20px;
+    }
+    label, p {
+      font-size: 14px;
+      text-align: left;
+      display: block;
+      margin: 10px 0 5px;
+    }
+    select, textarea, button {
+      width: 100%;
+      margin-top: 5px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: none;
+    }
+    button {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e65a50;
+    }
+    .stars {
+      display: flex;
+      justify-content: space-between;
+    }
+    .stars input {
+      display: none;
+    }
+    .stars span {
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="feedback-form-container">
-        <h1>Feedback Form</h1>
-        <form id="feedbackForm">
-            <div class="form-group">
-                <label for="Firstname">Your First Name</label>
-                <input type="text" id="Fname" name="name" placeholder="Enter your First name" required>
-            </div>
-            <div class="form-group">
-                <label for="Lastname">Your Second Name</label>
-                <input type="text" id="Lname" name="name1" placeholder="Enter your Second name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="feedback">Your Feedback</label>
-                <textarea id="feedback" name="feedback" placeholder="Write your feedback here..." required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="rating">Rate Us</label>
-                <select id="rating" name="rating">
-                    <option value="excellent">Excellent</option>
-                    <option value="good">Good</option>
-                    <option value="average">Average</option>
-                    <option value="poor">Poor</option>
-                </select>
-            </div>
-            <button type="submit" class="submit-button">Submit Feedback</button>
-        </form>
+  <div class="feedback-form">
+    <div class="logo">
+      <h1><span style="color: darkblue">UNIWELL</span></h1>
     </div>
+    <div class="banner">
+      <img src="./cafe.jpg" alt="Cafe Banner">
+    </div>
+    <h2>Hello, Thanks for Visiting!</h2>
+    <p>Please help us improve our cafe services by filling<br/> in our feedback form. Thank you!</p>
+    <form>
+      <label for="visit-frequency">How often do you visit here?</label>
+      <select id="visit-frequency" name="visit-frequency">
+        <option value="regularly">Regularly</option>
+        <option value="sometimes">Sometimes</option>
+        <option value="rarely">Rarely</option>
+      </select>
+
+      <div class="ratings">
+        <p>Quality of the Food</p>
+        <div class="stars">
+          <input type="radio" name="food-quality" value="1"><span>★</span>
+          <input type="radio" name="food-quality" value="2"><span>★</span>
+          <input type="radio" name="food-quality" value="3"><span>★</span>
+          <input type="radio" name="food-quality" value="4"><span>★</span>
+          <input type="radio" name="food-quality" value="5"><span>★</span>
+        </div>
+        <p>Service Quality</p>
+        <div class="stars">
+          <input type="radio" name="service-quality" value="1"><span>★</span>
+          <input type="radio" name="service-quality" value="2"><span>★</span>
+          <input type="radio" name="service-quality" value="3"><span>★</span>
+          <input type="radio" name="service-quality" value="4"><span>★</span>
+          <input type="radio" name="service-quality" value="5"><span>★</span>
+        </div>
+        <p>Overall Experience</p>
+        <div class="stars">
+          <input type="radio" name="overall-experience" value="1"><span>★</span>
+          <input type="radio" name="overall-experience" value="2"><span>★</span>
+          <input type="radio" name="overall-experience" value="3"><span>★</span>
+          <input type="radio" name="overall-experience" value="4"><span>★</span>
+          <input type="radio" name="overall-experience" value="5"><span>★</span>
+        </div>
+      </div>
+
+      <label for="recommendation">Would you recommend our restaurant to others?</label>
+      <select id="recommendation" name="recommendation">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="suggestions">Your Suggestions to Improve</label>
+      <textarea id="suggestions" name="suggestions" rows="4"></textarea>
+
+      <div class="follow-up">
+        <input type="checkbox" id="follow-up" name="follow-up">
+        <label for="follow-up">Receive personal follow-up to your feedback</label>
+      </div>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
 </body>
 </html>
